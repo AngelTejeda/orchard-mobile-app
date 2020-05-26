@@ -1,3 +1,47 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" menuId="custom" contentId="main" class="my-custom-menu">
+
+    <ion-header>
+      <ion-toolbar color="tertiary">
+        <ion-title>
+          <ion-icon name="calculator-sharp"></ion-icon>
+          FCFM
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+
+      <div *ngFor="let pagina of paginas">
+        <ion-menu-toggle *ngIf= "pagina.referencia">
+          <ion-item [routerLink]="pagina.referencia" routerDirection="root" routerLinkActive="active">
+            <ion-label>
+              {{ pagina.nombre }}
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        
+        <ion-item button *ngIf="pagina.children?.length > 0" (click)="pagina.open = !pagina.open; animateArrow(!pagina.open)"
+          [class.active-parent]="pagina.open" detail = "false">
+          <ion-icon slot="end" name="arrow-forward" class="arrow"></ion-icon>
+          <ion-label> {{ pagina.nombre }} </ion-label>
+        </ion-item>
+
+        <ion-list *ngIf="pagina.open">
+          <ion-menu-toggle>
+            <ion-item class="sub-item" *ngFor="let sub of pagina.children" [routerLink]="sub.referencia" routerDirection="root" routerLinkActive="active">
+              <ion-label>
+                {{ sub.nombre }}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+      </div>
+
+
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>
