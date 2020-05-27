@@ -1,5 +1,7 @@
 {
   "name": "LAM-PIA",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
