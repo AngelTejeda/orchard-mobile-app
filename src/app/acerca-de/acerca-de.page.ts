@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {MenuController} from "@ionic/angular";
+//LOS 2 IMPORTS SIGUIENTES SON PARA LA USAR LA GEOLOCALIZACION
+//EN EN EL APP MODULE.TS AÑADI EL PRIMER IMPORT Y EL PROVIDER DE GEOLOCALIZACION
 import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
 import { LoadingController } from '@ionic/angular';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 declare var google;
 
@@ -12,19 +13,23 @@ declare var google;
   styleUrls: ['./acerca-de.page.scss'],
 })
 export class AcercaDePage implements OnInit {
+  //VARIABLE QUE GUARDA LA REF DEL MAPA PARA PODER ENVIARLO A FUNCIONS
   mapReferencia = null;
 
   constructor(private geolocation: Geolocation,
+    //EL LOADCTRL SIRVE PARA QUE CUANDO VEAN EL MAPA LES APAREZCA EL SIGNO DE CARGANDO EN PLAN DE "NO LE MUEVAS HASTA QUE CARGUE"
     private loadCtrl: LoadingController) {
   }
-
+  //ES PA 
   ngOnInit() {
     this.loadMap();
   }
-
+  //Usamos async para no mm hacer una promesa xd Por asi decirlo 
   async loadMap(){
+    //aqui es donde se usa eso de el simbolo de cargando
     const loading = await this.loadCtrl.create();
     loading.present();
+    //obtenemos la latitud y longitud(?), obtenerlocalizacion es un metedo abajo
     const myLatLng = await this.obtenerLocalizacion();
     console.log(myLatLng);
     const mapEle: HTMLElement = document.getElementById('map');
@@ -56,7 +61,7 @@ export class AcercaDePage implements OnInit {
   private async obtenerLocalizacion(){
     const rta = await this.geolocation.getCurrentPosition();
     return {
-      //Es el objeto con la latitud y longitud
+      //Es el objeto con la latitud y longitud y como antes hay un return pues se regresa, daa
       lat: rta.coords.latitude,
       lng: rta.coords.longitude
     };
