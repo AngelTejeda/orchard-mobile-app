@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+      <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+
+      <ion-title>
+        Frutas
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let fruta of frutas" style="width:80%; display:block; margin:auto; margin-bottom:20px;">
+      <ion-card-header>    
+          <ion-card-title>
+              {{ fruta.nombre }}
+          </ion-card-title>
+      </ion-card-header>
+          
+      <ion-card-content>
+          <ion-slides [options] = "sliderConfig">
+            <ion-slide *ngFor = "let imagen of fruta.imagenes">
+              <ion-img [src] = "imagen.ruta_imagen" style="width:90%; display:block; margin:auto; margin-bottom:10px; "></ion-img>
+            </ion-slide>
+          </ion-slides>
+          <p><b>Descripción: </b><br></p>
+          {{ fruta.descripcion }}
+
+          <ion-button (click)="reproducir(fruta)" style="display:block; margin:auto; margin-top:10px;">
+            <ion-icon name="play-outline" slot="start"></ion-icon>
+            Reproducir Audio
+          </ion-button>
+      </ion-card-content>
+  </ion-card>
+  
+</ion-content>

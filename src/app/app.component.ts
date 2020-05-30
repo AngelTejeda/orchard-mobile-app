@@ -47,7 +47,21 @@ export class AppComponent {
     },
     {
       nombre: "Productos",
-      referencia: "/productos"
+      children: [
+        {
+          nombre: "Nuestros Productos",
+          referencia: "/productos",
+        },
+        {
+          nombre: "Cultivos",
+          referencia: "/productos/cultivos",
+        },
+        {
+          nombre: "Frutas",
+          referencia: "/productos/frutas",
+        }
+
+      ]
     },
     {
       nombre: "Acerca de",
