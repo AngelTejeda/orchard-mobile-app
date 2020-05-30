@@ -20,17 +20,37 @@
       </ion-toolbar>
   </ion-header>
   <ion-card>
-      <ion-card-title style="text-align:center;">¿Que hay de nuevo?
+      <ion-card-title style="text-align:center;">Conoce nuestros productos</ion-card-title>
         <ion-card-content>
-            <ion-slides [options] = "sliderConfig">
-                <ion-slide>
-                  <ion-card><ion-title>Noticia 1</ion-title></ion-card>
+            <ion-slides>
+                <ion-slide *ngFor="let producto of productos">
+                    <ion-card>
+                        <ion-title>{{producto.nombre}}</ion-title>
+                        <ion-card-header>
+                            {{producto.descripcion}}
+                        </ion-card-header>
+                        <ion-card-content>
+                            <ion-img [src]="producto.imagen" style="display:block; margin:auto; margin-top:10px;"></ion-img>
+                        </ion-card-content>
+                    </ion-card>
                 </ion-slide>
-                <ion-slide>
-                    <ion-card><ion-title>Noticia 2</ion-title></ion-card>
-                  </ion-slide>
-              </ion-slides>
+            </ion-slides>
         </ion-card-content>
-    </ion-card-title>
   </ion-card>
+  <ion-card>
+      <ion-card-title style="text-align:center;">
+          ¿Quieres visitarnos?
+      </ion-card-title>
+      <ion-card-content>
+         <ion-button  [routerLink]="['/acerca-de']" style="display:block; margin:auto; margin-top:10px;">Conoce nuestra ubicacion</ion-button> 
+      </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-title style="text-align:center;">
+        ¿Quieres contactarnos?
+    </ion-card-title>
+    <ion-card-content>
+       <ion-button  [routerLink]="['/contacto']" style="display:block; margin:auto; margin-top:10px;">Contacto</ion-button> 
+    </ion-card-content>
+</ion-card>
 </ion-content>
