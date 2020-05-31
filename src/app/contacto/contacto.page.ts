@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MenuController} from "@ionic/angular";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contacto',
@@ -8,9 +9,13 @@ import {MenuController} from "@ionic/angular";
 })
 export class ContactoPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  NewForm(){
+    this.router.navigate(['/new-form']);
   }
 
 }

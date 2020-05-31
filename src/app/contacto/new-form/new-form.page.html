@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/contacto"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agenda la cita</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+            <ion-label>Nombres</ion-label>
+            <ion-input type="text" required="true" #title></ion-input>
+            <ion-label>Apellidos</ion-label>
+            <ion-input type="text" required="true" ></ion-input>
+            <ion-label>Comentarios</ion-label>
+            <ion-input type="text" required="true" ></ion-input>
+            <ion-button color="primary" (click)="SendForm()">Enviar</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>

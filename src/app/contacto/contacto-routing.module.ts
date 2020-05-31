@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: ContactoPage
+  },  {
+    path: 'new-form',
+    loadChildren: () => import('./new-form/new-form.module').then( m => m.NewFormPageModule)
   }
+
 ];
 
 @NgModule({
