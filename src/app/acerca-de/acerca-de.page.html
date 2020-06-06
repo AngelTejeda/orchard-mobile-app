@@ -10,7 +10,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding class="background">
   <ion-header>
       <ion-toolbar>
         <ion-title size="large" style="text-align:center;">
@@ -19,27 +19,23 @@
         </ion-title>
       </ion-toolbar>
   </ion-header>
-  <br>
-  <div class="ion-text-center">
-    <ion-text>Visitanos</ion-text>
-  </div>
-  <br>
+  <br><br>
   <div class="ion-text-justify" class="ion-margin">
     <div class="ion-text-center">
-    <ion-text >¿Dónde estamos ubicados?</ion-text>
+    <ion-text color= "dark"><h4>¿Dónde estamos ubicados?</h4></ion-text>
     </div>
-    Tenemos instalaciones en las siguientes ubicaciones.
+    <ion-text color= "dark"><h4>Tenemos las siguientes ubicaciones.</h4></ion-text>
   </div>
   <br>
   <div class="ion-text-center">
-    <ion-text >Huerto #1</ion-text>
+    <ion-card><ion-text color= "success"><h4>Huerto #1</h4></ion-text></ion-card>
     </div>
   <div class="ion-margin" align="center" id="map" ></div>
-  <br><br><br>
+  <br><br>
   <div class="ion-text-center">
-    <ion-text >Huerto #2</ion-text>
+    <ion-card><ion-text color= "success"><h4>Huerto #2</h4></ion-text></ion-card>
     </div>
-  <div class="ion-margin" id="mapa" ></div>
+  <div class="ion-margin" align = "center" id="mapa" ></div>
 <!--La wea de abajo es para mostrar indicaciones, pensaba ponerlo en un boton para que dependiendo de la 
   esa wea que quieran visitar, pues se les muestren las indicaciones correspondientes.. Pero me dio flojera-->
   <!--<div id="indicaciones"></div>-->
