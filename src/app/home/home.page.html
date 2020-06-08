@@ -19,8 +19,13 @@
           </ion-title>
       </ion-toolbar>
   </ion-header>
+
+  <!--Productos-->
   <ion-card>
-      <ion-card-title style="text-align:center;">Conoce nuestros productos</ion-card-title>
+        <ion-card-title style="text-align:center;">
+            Conoce nuestros productos
+        </ion-card-title>
+
         <ion-card-content>
             <ion-slides>
                 <ion-slide *ngFor="let producto of productos">
@@ -35,22 +40,36 @@
                     </ion-card>
                 </ion-slide>
             </ion-slides>
+            <ion-button  [routerLink]="['/productos']" style="display:block; margin:auto; margin-top:10px;">
+                <ion-icon name="pricetags-outline" slot = "start"></ion-icon>
+                Busca más productos
+            </ion-button> 
         </ion-card-content>
   </ion-card>
+
   <ion-card>
       <ion-card-title style="text-align:center;">
           ¿Quieres visitarnos?
       </ion-card-title>
+
       <ion-card-content>
-         <ion-button  [routerLink]="['/acerca-de']" style="display:block; margin:auto; margin-top:10px;">Conoce nuestra ubicacion</ion-button> 
+        <ion-button  [routerLink]="['/acerca-de']" style="display:block; margin:auto; margin-top:10px;">
+            <ion-icon name="map-outline" slot = "start"></ion-icon>
+            Conoce nuestra ubicacion
+        </ion-button> 
       </ion-card-content>
   </ion-card>
+
   <ion-card>
     <ion-card-title style="text-align:center;">
         ¿Quieres contactarnos?
     </ion-card-title>
+    
     <ion-card-content>
-       <ion-button  [routerLink]="['/contacto']" style="display:block; margin:auto; margin-top:10px;">Contacto</ion-button> 
+        <ion-button  [routerLink]="['/contacto']" style="display:block; margin:auto; margin-top:10px;">
+            <ion-icon name="calendar-outline" slot = "start"></ion-icon>
+            Agenda una cita
+        </ion-button> 
     </ion-card-content>
 </ion-card>
 </ion-content>

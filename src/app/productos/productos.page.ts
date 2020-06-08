@@ -19,15 +19,15 @@ export class ProductosPage implements OnInit {
 
   productos = [
     {
-      nombre: "Tierra",
-      descripcion: "Estos productos son de la tierra.",
-      imagen: "assets/tierra.jpg",
+      nombre: "Cultivos",
+      descripcion: "Estos productos son de cultivo.",
+      imagen: "assets/Productos/cultivos.jpg",
       referencia: "/productos/cultivos"
     },
     {
       nombre: "Frutas",
       descripcion: "Estas son frutas",
-      imagen: "assets/tierra.jpg",
+      imagen: "assets/Productos/frutas.jpg",
       referencia: "/productos/frutas"
     }
   ]

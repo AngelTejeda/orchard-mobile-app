@@ -39,33 +39,36 @@ export class AppComponent {
   paginas = [
     {
       nombre: "Inicio",
-      referencia: "/home"
+      referencia: "/home",
+      icon: "home-outline"
     },
     {
       nombre: "Contacto",
-      referencia: "/contacto"
+      referencia: "/contacto",
+      icon: "calendar-outline"
     },
     {
       nombre: "Productos",
+      referencia: "/productos",
+      icon: "pricetags-outline",
       children: [
-        {
-          nombre: "Nuestros Productos",
-          referencia: "/productos",
-        },
         {
           nombre: "Cultivos",
           referencia: "/productos/cultivos",
+          icon: "leaf-outline"
         },
         {
           nombre: "Frutas",
           referencia: "/productos/frutas",
+          icon: "nutrition-outline"
         }
 
       ]
     },
     {
       nombre: "Acerca de",
-      referencia: "/acerca-de"
+      referencia: "/acerca-de",
+      icon: "information-circle-outline"
     }
   ]
 

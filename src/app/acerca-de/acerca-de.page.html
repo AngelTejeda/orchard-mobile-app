@@ -19,27 +19,36 @@
         </ion-title>
       </ion-toolbar>
   </ion-header>
+
   <br>
   <div class="ion-text-center">
     <ion-text>Visitanos</ion-text>
   </div>
   <br>
+
   <div class="ion-text-justify" class="ion-margin">
     <div class="ion-text-center">
-    <ion-text >¿Dónde estamos ubicados?</ion-text>
+      <ion-text >¿Dónde estamos ubicados?</ion-text>
     </div>
     Tenemos instalaciones en las siguientes ubicaciones.
+    <ion-button  [routerLink]="['/contacto']" style="display:block; margin:auto; margin-top:10px;">
+      <ion-icon name="calendar-outline" slot = "start"></ion-icon>
+      Agenda una cita
+    </ion-button> 
   </div>
   <br>
+
   <div class="ion-text-center">
     <ion-text >Huerto #1</ion-text>
     </div>
   <div class="ion-margin" align="center" id="map" ></div>
   <br><br><br>
+
   <div class="ion-text-center">
     <ion-text >Huerto #2</ion-text>
     </div>
   <div class="ion-margin" id="mapa" ></div>
+
 <!--La wea de abajo es para mostrar indicaciones, pensaba ponerlo en un boton para que dependiendo de la 
   esa wea que quieran visitar, pues se les muestren las indicaciones correspondientes.. Pero me dio flojera-->
   <!--<div id="indicaciones"></div>-->
