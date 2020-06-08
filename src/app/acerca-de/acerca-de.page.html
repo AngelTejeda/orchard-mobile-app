@@ -10,7 +10,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding class="background">
   <ion-header>
       <ion-toolbar>
         <ion-title size="large" style="text-align:center;">
@@ -27,10 +27,9 @@
   <br>
 
   <div class="ion-text-justify" class="ion-margin">
-    <div class="ion-text-center">
-      <ion-text >¿Dónde estamos ubicados?</ion-text>
-    </div>
-    Tenemos instalaciones en las siguientes ubicaciones.
+    
+    <ion-text color= "dark"><h4>¿Dónde estamos ubicados?</h4></ion-text>
+    <ion-text color= "dark"><h4>Tenemos las siguientes ubicaciones.</h4></ion-text>
     <ion-button  [routerLink]="['/contacto']" style="display:block; margin:auto; margin-top:10px;">
       <ion-icon name="calendar-outline" slot = "start"></ion-icon>
       Agenda una cita
@@ -39,13 +38,12 @@
   <br>
 
   <div class="ion-text-center">
-    <ion-text >Huerto #1</ion-text>
+    <ion-card><ion-text color= "success"><h4>Huerto #1</h4></ion-text></ion-card>
     </div>
   <div class="ion-margin" align="center" id="map" ></div>
-  <br><br><br>
-
+  <br><br>
   <div class="ion-text-center">
-    <ion-text >Huerto #2</ion-text>
+    <ion-card><ion-text color= "success"><h4>Huerto #2</h4></ion-text></ion-card>
     </div>
   <div class="ion-margin" id="mapa" ></div>
 
