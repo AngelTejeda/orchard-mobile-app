@@ -12,40 +12,52 @@ declare var google;
   styleUrls: ['./acerca-de.page.scss'],
 })
 export class AcercaDePage implements OnInit {
-
-  //Creamos nuestras variables globales
-  map: any;
-  mapa: any;
-  directionsService = new google.maps.DirectionsService();
-  directionsDisplay = new google.maps.DirectionsRenderer();
-  servicio = new google.maps.DirectionsService();
-  display = new google.maps.DirectionsRenderer();
-
-  destination = { lat: 25.725627, lng: -100.315146 };
-  destino = {lat: 25.724452, lng: -100.307421};
-
   constructor(private geolocation: Geolocation,
     private loadCtrl: LoadingController) {
   }
 
-  //Al cargar la página, cargamos el mapa
   ngOnInit() {
-    this.loadMap();
-    this.loadMapa();
-  }  
+  }
 
+  huertos = [
+    {
+      nombre: 'Huerto 1',
+      location: {
+        lat: 25.725627,
+        lng: -100.315146
+      },
+      zoom: 8
+    },
+    {
+      nombre: 'Huerto 2',
+      location: {
+        lat: 25.6466554,
+        lng: -100.3253636
+      },
+      zoom: 9
+    }
+  ]
+
+  //Geolocalización
+  //Variables Globales
+  map: any;
+  directionsService = new google.maps.DirectionsService();
+  directionsDisplay = new google.maps.DirectionsRenderer();
+  destination = { lat: 25.725627, lng: -100.315146 };
+  sembradio: any = null;
+
+  //Carga del mapa
   loadMap() {
-    //Obtenemos nuestro elemento map del HTmL
-    const mapEle: HTMLElement = document.getElementById('map');
-   // const indicacionesEle : HTMLElement = document.getElementById('indicaciones');
-    //Creamos un mapa con centro en la facultad
+    console.log(this.sembradio)
+    const mapEle: HTMLElement = document.getElementById('map'); //Obtenemos el elemento donde se mostrará el mapa.
+    //const indicacionesEle : HTMLElement = document.getElementById('indicaciones');
     this.map = new google.maps.Map(mapEle, {
-      center: this.destination,
-      zoom: 12
+      center: this.sembradio.location,  //Creamos un mapa con centro en el huerto seleccionado.
+      zoom: this.sembradio.zoom
     });
   
     this.directionsDisplay.setMap(this.map);
-  //  this.directionsDisplay.setPanel(indicacionesEle);
+    //this.directionsDisplay.setPanel(indicacionesEle);
   
     //Cuando el mapa esté "listo", calcular la ruta
     google.maps.event.addListenerOnce(this.map, 'idle', () => {
@@ -53,10 +65,12 @@ export class AcercaDePage implements OnInit {
       this.calculateRoute();
     });
   }
+
+  //Cálculo de la ruta
   private async calculateRoute() {
     this.directionsService.route({
-      origin: await this.obtenerLocalizacion(),
-      destination: this.destination,
+      origin: await this.obtenerLocalizacion(), //El origen es la ubicación del dispositivo
+      destination: this.sembradio.location, //El destino es el huerto seleccionado
       travelMode: google.maps.TravelMode.DRIVING,
     }, (response, status)  => {
       if (status === google.maps.DirectionsStatus.OK) {
@@ -66,40 +80,8 @@ export class AcercaDePage implements OnInit {
       }
     });
   }
-  loadMapa() {
-    //Obtenemos nuestro elemento map del HTmL
-    const mapaEle: HTMLElement = document.getElementById('mapa');
-    //const indicacionesEle : HTMLElement = document.getElementById('indicaciones');
-    //Creamos un mapa con centro en la facultad
-    this.mapa = new google.maps.Map(mapaEle, {
-    //  center: this.destino,
-      zoom: 12
-    });
-  
-    this.display.setMap(this.mapa);
-    //this.directionsDisplay.setPanel(indicacionesEle);
-  
-    //Cuando el mapa esté "listo", calcular la ruta
-    google.maps.event.addListenerOnce(this.mapa, 'idle', () => {
-      mapaEle.classList.add('show-map');
-      this.calcularRuta();
-    });
-  }
 
-  private async calcularRuta() {
-    this.servicio.route({
-      origin: await this.obtenerLocalizacion(),
-      destination: this.destino,
-      travelMode: google.maps.TravelMode.DRIVING,
-    }, (response, status)  => {
-      if (status === google.maps.DirectionsStatus.OK) {
-        this.display.setDirections(response);
-      } else {
-        alert('Could not display directions due to: ' + status);
-      }
-    });
-  }
-
+  //Ubicación del Dispositivo
   private async obtenerLocalizacion(){
     const rta = await this.geolocation.getCurrentPosition();
     console.log(rta);
@@ -108,7 +90,6 @@ export class AcercaDePage implements OnInit {
       lng: rta.coords.longitude
     };
   }
-
 }
 
 
