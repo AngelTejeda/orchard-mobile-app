@@ -26,17 +26,16 @@
   </div>
   <br>
 
-  <ion-label>Seleccione un Huerto</ion-label>
-  <ion-select [(ngModel)]="sembradio">
-    <ion-select-option *ngFor="let huerto of huertos" [value]="huerto">{{ huerto.nombre }}</ion-select-option>
-  </ion-select>
-  <ion-button (click)="loadMap()" *ngIf="sembradio">
-    Mostrar Huerto
-  </ion-button>
-  
-  <!--<div *ngIf="sembradio">
-    <ion-card><ion-text color= "success"><h4>{{ sembradio.nombre }}</h4></ion-text></ion-card>
-  </div>-->
+  <br>
+  <div>
+  <ion-title style="text-align:center;">Seleccione un Huerto<br></ion-title>
+  <ion-segment [(ngModel)]="sembradio">
+    <ion-segment-button *ngFor="let huerto of huertos" [value]="huerto" (click)="loadMap()">
+        <ion-label>{{ huerto.nombre }}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  </div>
+
   <div class="ion-margin" id="map"></div>
 
   <div class="ion-margin">
