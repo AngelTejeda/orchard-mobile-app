@@ -11,7 +11,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let fruta of frutas" style="width:80%; display:block; margin:auto; margin-bottom:20px;">
+  <ion-card *ngFor="let fruta of frutas">
       <ion-card-header>    
           <ion-card-title>
               {{ fruta.nombre }}
@@ -21,13 +21,15 @@
       <ion-card-content>
           <ion-slides [options] = "sliderConfig">
             <ion-slide *ngFor = "let imagen of fruta.imagenes">
-              <ion-img [src] = "imagen.ruta_imagen" style="width:90%; display:block; margin:auto; margin-bottom:10px; "></ion-img>
+              <ion-img [src] = "imagen.ruta_imagen"></ion-img>
             </ion-slide>
           </ion-slides>
-          <p><b>Descripción: </b><br></p>
-          {{ fruta.descripcion }}
+          <p style="color: black;">
+            <b>Descripción:</b><br>
+            {{ fruta.descripcion }}
+          </p>
 
-          <ion-button (click)="start(fruta.audio, $event)" style="display:block; margin:auto; margin-top:10px;">
+          <ion-button (click)="start(fruta.audio, $event)">
             <ion-icon name="headset-outline" slot="start"></ion-icon>
             Reproducir Audio
           </ion-button>
