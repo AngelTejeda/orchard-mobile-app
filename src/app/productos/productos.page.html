@@ -21,7 +21,7 @@
     </ion-header>
 
     <ion-card *ngFor="let producto of productos">
-        <ion-card-header style="text-align:center;">    
+        <ion-card-header>    
             <ion-card-title>
                 {{ producto.nombre }}
             </ion-card-title>
@@ -29,10 +29,12 @@
             
         <ion-card-content style="text-align:justify;">
             <ion-img [src]="producto.imagen"></ion-img>
-            <p><b>Descripción: </b><br></p>
-            {{ producto.descripcion }}
+            <p style="color: black;">
+                <b>Descripción:</b><br>
+                {{ producto.descripcion }}
+            </p>
 
-            <ion-button [routerLink]="producto.referencia" style="display:block; margin:auto; margin-top:10px;">
+            <ion-button [routerLink]="producto.referencia">
                 <ion-icon name="search-outline" slot="start"></ion-icon>
                 Busca más {{ producto.nombre }}
             </ion-button>
