@@ -11,27 +11,34 @@
     <ion-col>
       <ion-card>
         <ion-card-content>
-          <ion-label>Nombre</ion-label>
-          <ion-input [(ngModel)]="nombre" type="text" required="true" #title></ion-input>
 
-          <ion-label>Telefono</ion-label>
-          <ion-input [(ngModel)]="telefono" type="number" required="true" ></ion-input>
+          <form >
+            <ion-list>
+              <ion-item>
+                <ion-label position="floating" >Nombre</ion-label>
+                <ion-input type="text" required="true" ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating" >Telefono</ion-label>
+                <ion-input type="tel" required="true" ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating" >Huerto</ion-label>
+                <ion-input  type="text" required="true" ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating" >Horario</ion-label>
+                <ion-input type="text" required="true" ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating" >Comentarios</ion-label>
+                <ion-input type="text" required="false" ></ion-input>
+              </ion-item>
+            </ion-list>
+            <ion-button type="submit" expand="block">Enviar </ion-button>
+        </form>
 
-          <!--<ion-label>Huerto mas cercano</ion-label>
-          <ion-input [(ngModel)]="huerto" type="text" required="true" ></ion-input>-->
-          <ion-label>Huerto mas cercano</ion-label>
-          <ion-select [(ngModel)]="huerto" required="true">
-            <ion-select-option>Huerto 1</ion-select-option>
-            <ion-select-option>Huerto 2</ion-select-option>
-          </ion-select>
 
-          <ion-label>Fecha y Hora</ion-label>
-          <ion-input [(ngModel)]="horario" type="text" required="true" ></ion-input>
-
-          <ion-label>Comentarios</ion-label>
-          <ion-input [(ngModel)]="comentario" type="text" required="true" ></ion-input>
-          
-          <ion-button color="primary" (click)="SendForm()">Enviar</ion-button>
         </ion-card-content>
       </ion-card>
     </ion-col>
