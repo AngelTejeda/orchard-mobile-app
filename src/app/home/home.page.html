@@ -29,18 +29,21 @@
     </ion-card-header>
 
     <ion-card-content>
-      <ion-slides>
+      <ion-slides pager="true">
         <ion-slide *ngFor="let producto of productos">
           <ion-card>
-            <ion-title>{{producto.nombre}}</ion-title>
             <ion-card-header>
-              {{producto.descripcion}}
+              <ion-title>
+                {{producto.nombre}}
+              </ion-title>
             </ion-card-header>
             <ion-card-content>
+              {{producto.descripcion}}
               <ion-img [src]="producto.imagen">
               </ion-img>
             </ion-card-content>
           </ion-card>
+          <br>
         </ion-slide>
       </ion-slides>
       <ion-button [routerLink]="['/productos']">

@@ -28,7 +28,7 @@
     </ion-card-header>
 
     <ion-card-content>
-      <ion-slides [options]="sliderConfig">
+      <ion-slides [options]="sliderConfig" pager="true">
         <ion-slide *ngFor="let imagen of fruta.imagenes">
           <ion-img [src]="imagen.ruta_imagen"></ion-img>
         </ion-slide>

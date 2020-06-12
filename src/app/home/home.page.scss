@@ -45,6 +45,7 @@ ion-img {
   display: block;
   margin: auto;
   margin-bottom: 10px;
+  padding-bottom: 15px;
 }
 
 ion-button {
@@ -56,4 +57,8 @@ ion-button {
 ion-card-title {
   font-weight: bold;
   text-align: center;
+}
+
+.swiper-pagination {
+  bottom: 10px !important;    
 }
