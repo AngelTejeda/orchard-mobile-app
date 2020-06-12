@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MenuController} from "@ionic/angular";
+import { MenuController } from "@ionic/angular";
 import { Howl } from 'howler';
 
 @Component({
@@ -10,7 +10,7 @@ import { Howl } from 'howler';
 export class FrutasPage implements OnInit {
 
   constructor(private menu: MenuController) { }
-  
+
   sliderConfig = {
     initialSlide: 0,
     speed: 400,
@@ -21,7 +21,7 @@ export class FrutasPage implements OnInit {
     {
       nombre: "Sandía",
       descripcion: "Jugosa sandia de gran tamaño preparada para aportar muchas vitaminas" +
-      "y minerales en sus ricos cocteles.",
+        "y minerales en sus ricos cocteles.",
       imagenes: [
         {
           ruta_imagen: "assets/Productos/Frutas/sandia1.jpg",
@@ -73,8 +73,8 @@ export class FrutasPage implements OnInit {
   player: Howl = null;
   isPlaying = false;
 
-  start(audio: String, event: any) {
-    if(this.player) {
+  start(audio: String) {
+    if (this.player) {
       this.player.stop();
     }
     this.player = new Howl({
@@ -85,7 +85,7 @@ export class FrutasPage implements OnInit {
       },
       onend: () => {
         this.isPlaying = false;
-        this.activeAudio = null;
+        //this.activeAudio = null;
       }
     })
     this.player.play();
@@ -93,12 +93,18 @@ export class FrutasPage implements OnInit {
 
   togglePlayer(pause) {
     this.isPlaying = !pause;
-    if(pause) {
+    if (pause) {
       this.player.pause();
     }
     else {
       this.player.play();
     }
+  }
+
+  stop() {
+    this.player.stop();
+    this.isPlaying = false;
+    this.activeAudio = null;
   }
 
   ngOnInit() {

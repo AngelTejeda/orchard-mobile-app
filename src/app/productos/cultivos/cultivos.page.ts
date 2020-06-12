@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {MenuController} from "@ionic/angular";
 import { Howl } from 'howler';
 
 @Component({
@@ -9,7 +8,11 @@ import { Howl } from 'howler';
 })
 export class CultivosPage implements OnInit {
 
-  constructor(private menu: MenuController) { }
+  constructor(
+    
+  ) {
+
+  }
 
   sliderConfig = {
     initialSlide: 0,
@@ -75,7 +78,7 @@ export class CultivosPage implements OnInit {
   player: Howl = null;
   isPlaying = false;
 
-  start(audio: String, event: any) {
+  start(audio: String) {
     if(this.player) {
       this.player.stop();
     }
@@ -87,7 +90,7 @@ export class CultivosPage implements OnInit {
       },
       onend: () => {
         this.isPlaying = false;
-        this.activeAudio = null;
+        //this.activeAudio = null;
       }
     })
     this.player.play();
@@ -101,6 +104,12 @@ export class CultivosPage implements OnInit {
     else {
       this.player.play();
     }
+  }
+
+  stop() {
+    this.player.stop();
+    this.isPlaying = false;
+    this.activeAudio = null;
   }
 
   ngOnInit() {
