@@ -7,12 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { NewFormPageRoutingModule } from './new-form-routing.module';
 
 import { NewFormPage } from './new-form.page';
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    ReactiveFormsModule,
     NewFormPageRoutingModule
   ],
   declarations: [NewFormPage]
