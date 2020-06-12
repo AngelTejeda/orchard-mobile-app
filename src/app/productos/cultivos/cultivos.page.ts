@@ -11,6 +11,12 @@ export class CultivosPage implements OnInit {
 
   constructor(private menu: MenuController) { }
 
+  sliderConfig = {
+    initialSlide: 0,
+    speed: 400,
+    autoplay: true
+  };
+
   cultivos = [
     {
       nombre: "Papa",

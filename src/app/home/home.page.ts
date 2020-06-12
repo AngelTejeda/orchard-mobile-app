@@ -11,6 +11,12 @@ export class HomePage {
 
     constructor(private menu: MenuController, private router: Router) {}
     
+    sliderConfig = {
+      initialSlide: 0,
+      speed: 400,
+      autoplay: true
+    };
+
     productos = [
         {
           nombre: "Producto 1",

@@ -11,6 +11,12 @@ export class FrutasPage implements OnInit {
 
   constructor(private menu: MenuController) { }
   
+  sliderConfig = {
+    initialSlide: 0,
+    speed: 400,
+    autoplay: true
+  };
+
   frutas = [
     {
       nombre: "Sandía",
