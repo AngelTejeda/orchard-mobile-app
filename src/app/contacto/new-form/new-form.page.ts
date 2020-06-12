@@ -42,7 +42,7 @@ export class NewFormPage implements OnInit {
       body: this.citaForm.value.nombre + ' desea agendar una cita en el horario ' +
         this.citaForm.value.horario+ '.<br>' +
         this.citaForm.value.huerto+
-        '<br>' + this.citaForm.value.comentario +
+        '<br>' + this.citaForm.value.comentario + '<br>Telefono para el contacto: '+
         this.citaForm.value.telefono,
       app: "Gmail",
       isHtml: true
