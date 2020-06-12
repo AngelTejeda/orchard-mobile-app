@@ -14,7 +14,8 @@ export class CultivosPage implements OnInit {
   cultivos = [
     {
       nombre: "Papa",
-      descripcion: "Esta es una papa.",
+      descripcion: "Papa blanca orgánica. Libre de fertilizantes y regadas con agua totalmente natural. Venga a" + 
+      "probar las mejores papas del estado.",
       imagenes: [
         {
           ruta_imagen: "assets/Productos/Cultivos/papa1.jpg",
@@ -30,7 +31,8 @@ export class CultivosPage implements OnInit {
     },
     {
       nombre: "Frijol",
-      descripcion: "Esto es frijol.",
+      descripcion: " Cultivado en las mejores tierras del país, venga a comprar todos los kilos de frijoles" +
+      "que guste aquí en su huerta.",
       imagenes: [
         {
           ruta_imagen: "assets/Productos/Cultivos/frijol1.jpg",
@@ -46,7 +48,8 @@ export class CultivosPage implements OnInit {
     },
     {
       nombre: "Maíz",
-      descripcion: "Esto es maíz.",
+      descripcion: "Directo de la mejor huerta, ofrecemos los mejores maíces para usted y toda su familia." +
+      "Venga y compruébelo usted mismo",
       imagenes: [
         {
           ruta_imagen: "assets/Productos/Cultivos/maiz1.jpg",
@@ -78,6 +81,7 @@ export class CultivosPage implements OnInit {
       },
       onend: () => {
         this.isPlaying = false;
+        this.activeAudio = null;
       }
     })
     this.player.play();

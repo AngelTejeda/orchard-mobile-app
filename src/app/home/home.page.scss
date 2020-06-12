@@ -28,8 +28,39 @@
 
 ion-card {
   width: 90%;
+  margin: auto;
+}
+
+#greenCard {
+  width: 85%;
   display: block;
   margin: auto;
   margin-top: 15px;
   margin-bottom: 15px;
+  background-color: #bde6aa;
+}
+
+ion-img {
+  width:90%;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+  padding-bottom: 15px;
+}
+
+ion-button {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+}
+
+ion-card-title {
+  font-weight: bold;
+  text-align: center;
+}
+
+ion-slides {
+  --bullet-background: blue;
+  --bullet-background-active: red;
+  --bullet-background-inactive: blue;
 }

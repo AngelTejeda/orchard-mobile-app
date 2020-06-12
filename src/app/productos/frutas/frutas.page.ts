@@ -14,7 +14,8 @@ export class FrutasPage implements OnInit {
   frutas = [
     {
       nombre: "Sandía",
-      descripcion: "Esta es una sandía.",
+      descripcion: "Jugosa sandia de gran tamaño preparada para aportar muchas vitaminas" +
+      "y minerales en sus ricos cocteles.",
       imagenes: [
         {
           ruta_imagen: "assets/Productos/Frutas/sandia1.jpg",
@@ -30,7 +31,7 @@ export class FrutasPage implements OnInit {
     },
     {
       nombre: "Melón",
-      descripcion: "Este es un melón.",
+      descripcion: "Aromático melon de cascara suave que te dejara encantado con su delicioso y refrescante sabor.",
       imagenes: [
         {
           ruta_imagen: "assets/Productos/Frutas/melon1.jpg",
@@ -46,7 +47,7 @@ export class FrutasPage implements OnInit {
     },
     {
       nombre: "Naranja",
-      descripcion: "Esta es una naranja.",
+      descripcion: "Dulce naranja de gran tamaño libre de fertilizante lista para consumirla entera o en jugo.",
       imagenes: [
         {
           ruta_imagen: "assets/Productos/Frutas/naranja1.jpg",
@@ -78,6 +79,7 @@ export class FrutasPage implements OnInit {
       },
       onend: () => {
         this.isPlaying = false;
+        this.activeAudio = null;
       }
     })
     this.player.play();

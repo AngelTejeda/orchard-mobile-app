@@ -1,43 +1,43 @@
 <ion-header [translucent]="true">
-    <ion-toolbar>
-        <ion-buttons slot="start">
-        <ion-menu-button autoHide="false"></ion-menu-button>
-        </ion-buttons>
+  <ion-toolbar style="--background: #11b82d; color: black;">
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
 
-        <ion-title>
-        Productos
-        </ion-title>
-    </ion-toolbar>
+    <ion-title>
+      <ion-icon name="nutrition"></ion-icon>
+      GRANJA "EL HUERTO"
+    </ion-title>
+  </ion-toolbar>
 </ion-header>
-  
+
 <ion-content>
-    <ion-header>
-        <ion-toolbar>
-            <ion-title size="large" style="text-align:center;">
-                <ion-icon name="nutrition"></ion-icon>
-                GRANJA "EL HUERTO"
-            </ion-title>
-        </ion-toolbar>
-    </ion-header>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title size="large" style="text-align:center;">
+        Productos
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-    <ion-card *ngFor="let producto of productos">
-        <ion-card-header>    
-            <ion-card-title>
-                {{ producto.nombre }}
-            </ion-card-title>
-        </ion-card-header>
-            
-        <ion-card-content style="text-align:justify;">
-            <ion-img [src]="producto.imagen"></ion-img>
-            <p style="color: black;">
-                <b>Descripción:</b><br>
-                {{ producto.descripcion }}
-            </p>
+  <ion-card *ngFor="let producto of productos">
+    <ion-card-header>
+      <ion-card-title>
+        {{ producto.nombre }}
+      </ion-card-title>
+    </ion-card-header>
 
-            <ion-button [routerLink]="producto.referencia">
-                <ion-icon name="search-outline" slot="start"></ion-icon>
-                Busca más {{ producto.nombre }}
-            </ion-button>
-        </ion-card-content>
-    </ion-card>
+    <ion-card-content style="text-align:justify;">
+      <ion-img [src]="producto.imagen"></ion-img>
+      <p style="color: black;">
+        <b>Descripción:</b><br>
+        {{ producto.descripcion }}
+      </p>
+
+      <ion-button [routerLink]="producto.referencia">
+        <ion-icon name="search-outline" slot="start"></ion-icon>
+        Busca más {{ producto.nombre }}
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

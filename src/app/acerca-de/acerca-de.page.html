@@ -1,11 +1,12 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar style="--background: #11b82d; color: black;">
     <ion-buttons slot="start">
       <ion-menu-button autoHide="false"></ion-menu-button>
     </ion-buttons>
 
     <ion-title>
-        Acerca De
+      <ion-icon name="nutrition"></ion-icon>
+      GRANJA "EL HUERTO"
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,8 +15,7 @@
   <ion-header>
     <ion-toolbar>
       <ion-title size="large" style="text-align:center;">
-        <ion-icon name="nutrition"></ion-icon>
-        GRANJA "EL HUERTO"
+        Acerca De
       </ion-title>
     </ion-toolbar>
   </ion-header>
@@ -28,19 +28,19 @@
 
   <br>
   <div>
-  <ion-title style="text-align:center;">Seleccione un Huerto<br></ion-title>
-  <ion-segment [(ngModel)]="sembradio">
-    <ion-segment-button *ngFor="let huerto of huertos" [value]="huerto" (click)="loadMap()">
+    <ion-title style="text-align:center;">Seleccione un Huerto<br></ion-title>
+    <ion-segment [(ngModel)]="sembradio">
+      <ion-segment-button *ngFor="let huerto of huertos" [value]="huerto" (click)="loadMap()">
         <ion-label>{{ huerto.nombre }}</ion-label>
-    </ion-segment-button>
-  </ion-segment>
+      </ion-segment-button>
+    </ion-segment>
   </div>
 
   <div class="ion-margin" id="map"></div>
 
   <div class="ion-margin">
-    <ion-button  [routerLink]="['/contacto']" style="display:block; margin:auto; margin-top:10px;">
-      <ion-icon name="calendar-outline" slot = "start"></ion-icon>
+    <ion-button [routerLink]="['/contacto']" style="display:block; margin:auto; margin-top:10px;">
+      <ion-icon name="calendar-outline" slot="start"></ion-icon>
       Agenda una cita
     </ion-button>
   </div>

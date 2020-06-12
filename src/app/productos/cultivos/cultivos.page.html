@@ -1,47 +1,56 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-      <ion-buttons slot="start">
+  <ion-toolbar style="--background: #11b82d; color: black;">
+    <ion-buttons slot="start">
       <ion-menu-button autoHide="false"></ion-menu-button>
-      </ion-buttons>
+    </ion-buttons>
 
-      <ion-title>
-        Cultivos
-      </ion-title>
+    <ion-title>
+      <ion-icon name="nutrition"></ion-icon>
+      GRANJA "EL HUERTO"
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title size="large" style="text-align:center;">
+        Cultivos
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
   <ion-card *ngFor="let cultivo of cultivos">
-      <ion-card-header>    
-          <ion-card-title>
-              {{ cultivo.nombre }}
-          </ion-card-title>
-      </ion-card-header>
-          
-      <ion-card-content>
-          <ion-slides [options] = "sliderConfig">
-            <ion-slide *ngFor = "let imagen of cultivo.imagenes">
-              <ion-img [src] = "imagen.ruta_imagen"></ion-img>
-            </ion-slide>
-          </ion-slides>
-          <p style="color: black;">
-            <b>Descripción:</b><br>
-            {{ cultivo.descripcion }}
-          </p>
+    <ion-card-header>
+      <ion-card-title>
+        {{ cultivo.nombre }}
+      </ion-card-title>
+    </ion-card-header>
 
-          <ion-button (click)="start(cultivo.audio, $event)">
-            <ion-icon name="headset-outline" slot="start"></ion-icon>
-            Reproducir Audio
-          </ion-button>
+    <ion-card-content>
+      <ion-slides [options]="sliderConfig" pager="true">
+        <ion-slide *ngFor="let imagen of cultivo.imagenes">
+          <ion-img [src]="imagen.ruta_imagen"></ion-img>
+        </ion-slide>
+      </ion-slides>
+      <p style="color: black;">
+        <b>Descripción:</b><br>
+        {{ cultivo.descripcion }}
+      </p>
 
-          <ion-footer *ngIf="activeAudio" class="ion-text-center">
-            <ion-button *ngIf="activeAudio == cultivo.audio && !isPlaying" (click)="togglePlayer(false)">
-              <ion-icon slot="icon-only" name="play"></ion-icon>
-            </ion-button>
+      <ion-button (click)="start(cultivo.audio, $event)">
+        <ion-icon name="headset-outline" slot="start"></ion-icon>
+        Reproducir Audio
+      </ion-button>
 
-            <ion-button *ngIf="activeAudio == cultivo.audio && isPlaying" (click)="togglePlayer(true)">
-              <ion-icon slot="icon-only" name="pause"></ion-icon>
-            </ion-button>
-          </ion-footer>
-      </ion-card-content>
+      <ion-footer *ngIf="activeAudio" class="ion-text-center">
+        <ion-button *ngIf="activeAudio == cultivo.audio && !isPlaying" (click)="togglePlayer(false)">
+          <ion-icon slot="icon-only" name="play"></ion-icon>
+        </ion-button>
+
+        <ion-button *ngIf="activeAudio == cultivo.audio && isPlaying" (click)="togglePlayer(true)">
+          <ion-icon slot="icon-only" name="pause"></ion-icon>
+        </ion-button>
+      </ion-footer>
+    </ion-card-content>
   </ion-card>
