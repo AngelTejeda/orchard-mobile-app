@@ -21,7 +21,7 @@ export class FrutasPage implements OnInit {
     {
       nombre: "Sandía",
       descripcion: "Jugosa sandia de gran tamaño preparada para aportar muchas vitaminas" +
-      "y minerales en sus ricos cocteles.",
+      " y minerales en sus ricos cocteles.",
       imagenes: [
         {
           ruta_imagen: "assets/Productos/Frutas/sandia1.jpg",
