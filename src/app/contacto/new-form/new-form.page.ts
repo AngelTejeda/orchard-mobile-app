@@ -8,15 +8,11 @@ import { EmailComposer } from '@ionic-native/email-composer/ngx';
   styleUrls: ['./new-form.page.scss'],
 })
 export class NewFormPage implements OnInit {
-
-  citaForm: FormGroup = null;
-
-  huertos = [
-    'Huerto 1',
-    'Huerto 2'
-  ]
-
-  constructor(private formBuilder: FormBuilder, public composer: EmailComposer) {
+  
+  constructor(
+    private formBuilder: FormBuilder,
+    public composer: EmailComposer
+  ) {
     this.citaForm = this.formBuilder.group({
       nombre: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z ]*')])],
       telefono: ['', Validators.compose([Validators.required, Validators.pattern('[0-9]{10}')])],
@@ -28,6 +24,13 @@ export class NewFormPage implements OnInit {
 
   ngOnInit() {
   }
+
+  citaForm: FormGroup = null;
+
+  huertos = [
+    'Huerto 1',
+    'Huerto 2'
+  ]
 
   submit() {
     this.SendForm();
@@ -50,6 +53,4 @@ export class NewFormPage implements OnInit {
     this.composer.open(email);
     console.log('Se ha enviado el correo');
   }
-
-
 }

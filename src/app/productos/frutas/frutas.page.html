@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar style="--background: #11b82d; color: black;">
     <ion-buttons slot="start">
-      <ion-menu-button autoHide="false"></ion-menu-button>
+      <ion-menu-button (click)="togglePlayer(true)" autoHide="false"></ion-menu-button>
     </ion-buttons>
 
     <ion-title>
@@ -38,18 +38,26 @@
         {{ fruta.descripcion }}
       </p>
 
-      <ion-button (click)="start(fruta.audio, $event)">
+      <ion-button *ngIf="activeAudio != fruta.audio" (click)="start(fruta.audio)">
         <ion-icon name="headset-outline" slot="start"></ion-icon>
         Reproducir Audio
       </ion-button>
 
-      <ion-footer *ngIf="activeAudio" class="ion-text-center">
-        <ion-button *ngIf="activeAudio == fruta.audio && !isPlaying" (click)="togglePlayer(false)">
+      <ion-footer *ngIf="activeAudio == fruta.audio" class="ion-text-center">
+        <ion-button (click)="start(fruta.audio)">
+          <ion-icon slot="icon-only" name="reload"></ion-icon>
+        </ion-button>
+
+        <ion-button *ngIf="!isPlaying" (click)="togglePlayer(false)">
           <ion-icon slot="icon-only" name="play"></ion-icon>
         </ion-button>
 
-        <ion-button *ngIf="activeAudio == fruta.audio && isPlaying" (click)="togglePlayer(true)">
+        <ion-button *ngIf="isPlaying" (click)="togglePlayer(true)">
           <ion-icon slot="icon-only" name="pause"></ion-icon>
+        </ion-button>
+
+        <ion-button (click)="stop()">
+          <ion-icon slot="icon-only" name="stop"></ion-icon>
         </ion-button>
       </ion-footer>
     </ion-card-content>
