@@ -12,6 +12,7 @@ ion-img {
     display: block;
     margin: auto;
     margin-bottom: 10px;
+    padding-bottom: 25px;
 }
 
 ion-button {
@@ -24,3 +25,8 @@ ion-card-title {
     font-weight: bold;
     text-align: center;
 }
+
+ion-slides {
+    --bullet-background: black;
+    --bullet-background-active: green;
+  }

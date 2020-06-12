@@ -10,24 +10,43 @@ export class ProductosPage implements OnInit {
 
   constructor(private menu: MenuController) { }
 
-  reproducir(producto) {
-    let sonido = new Audio();
-    sonido.src = producto.audio;
-    sonido.load();
-    sonido.play();
-  }
+  sliderConfig = {
+    initialSlide: 0,
+    speed: 400,
+    autoplay: true
+  };
 
   productos = [
     {
       nombre: "Cultivos",
       descripcion: "Aqui encontrarás los mejores cultivos, con los mejores tratos para la mejor calidad.",
-      imagen: "assets/Productos/cultivos.jpg",
+      imagenes: [
+        {
+          imagen: "assets/Productos/Cultivos/papa1.jpg",
+        },
+        {
+          imagen: "assets/Productos/Cultivos/frijol3.jpg",
+        },
+        {
+          imagen: "assets/Productos/Cultivos/maiz3.jpg",
+        }
+      ],
       referencia: "/productos/cultivos"
     },
     {
       nombre: "Frutas",
-      descripcion: "Las frutas mas frescas y de mejor calidad, las podrás encontrar aqui.",
-      imagen: "assets/Productos/frutas.jpg",
+      descripcion: "Las frutas más frescas y de mejor calidad, las podrás encontrar aqui.",
+      imagenes: [
+        {
+          imagen: "assets/Productos/Frutas/melon2.jpg",
+        },
+        {
+          imagen: "assets/Productos/Frutas/sandia3.jpg",
+        },
+        {
+          imagen: "assets/Productos/Frutas/naranja3.jpg",
+        }
+      ],
       referencia: "/productos/frutas"
     }
   ]

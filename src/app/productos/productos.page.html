@@ -27,8 +27,13 @@
       </ion-card-title>
     </ion-card-header>
 
-    <ion-card-content style="text-align:justify;">
-      <ion-img [src]="producto.imagen"></ion-img>
+    <ion-card-content>
+      <ion-slides [options]="sliderConfig" pager="true" loop="true">
+        <ion-slide *ngFor="let foto of producto.imagenes">
+          <ion-img [src]="foto.imagen"></ion-img>
+        </ion-slide>
+      </ion-slides>
+    
       <p style="color: black;">
         <b>Descripción:</b><br>
         {{ producto.descripcion }}
