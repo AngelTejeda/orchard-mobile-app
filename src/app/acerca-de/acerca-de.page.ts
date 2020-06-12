@@ -52,24 +52,14 @@ export class AcercaDePage implements OnInit {
   loadMap() {
     this.indic = false;
     const mapEle: HTMLElement = document.getElementById('map'); //Obtenemos el elemento donde se mostrará el mapa.
-<<<<<<< HEAD
-=======
-    //const indicacionesEle : HTMLElement = document.getElementById('indicaciones');
->>>>>>> ccc937c55fbcd457697976be45481a2fb418117a
+    const indicacionesEle : HTMLElement = document.getElementById('indicators');
     this.map = new google.maps.Map(mapEle, {
       center: this.sembradio.location,  //Creamos un mapa con centro en el huerto seleccionado.
       zoom: this.sembradio.zoom
     });
 
-    const indicacionesEle : HTMLElement = document.getElementById('indicators');
-    this.directionsDisplay.setPanel(indicacionesEle);  
-    
     this.directionsDisplay.setMap(this.map);
-<<<<<<< HEAD
-=======
-    const indicacionesEle : HTMLElement = document.getElementById('indicaciones');
-    this.directionsDisplay.setPanel(indicacionesEle);
->>>>>>> ccc937c55fbcd457697976be45481a2fb418117a
+    this.directionsDisplay.setPanel(indicacionesEle);  
   
     //Cuando el mapa esté "listo", calcular la ruta
     google.maps.event.addListenerOnce(this.map, 'idle', () => {
