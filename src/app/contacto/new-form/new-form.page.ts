@@ -26,14 +26,15 @@ export class NewFormPage implements OnInit {
       subject: 'Agendar cita',
       nombre: this.nombre,
       telefono: this.telefono,
-      body: 'Quiero ver tus melones bb '+this.nombre,
-        
-        huerto: this.huerto,
-        horario: this.horario,
-        comentario: this.comentario,
-      
-      app: "Gmail",
-      isHtml: false
+      huerto: this.huerto,
+      horario: this.horario,
+      comentario: this.comentario,
+      body: this.nombre+' :'+this.comentario+
+      'Fecha y hora de la cita: '+this.horario+
+      'Huerto a visitar: '+this.huerto+
+      'Telefono: '+this.telefono,
+      app: "gmail",
+      isHtml: true
     }
     this.composer.open(email);
   }
