@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from "@ionic/angular";
 import { Howl } from 'howler';
 
 @Component({
@@ -10,7 +9,7 @@ import { Howl } from 'howler';
 export class FrutasPage implements OnInit {
 
   constructor(
-    private menu: MenuController
+    
   ) {
     
   }
@@ -95,12 +94,14 @@ export class FrutasPage implements OnInit {
   }
 
   togglePlayer(pause) {
-    this.isPlaying = !pause;
-    if (pause) {
-      this.player.pause();
-    }
-    else {
-      this.player.play();
+    if(this.player) {
+      this.isPlaying = !pause;
+      if (pause) {
+        this.player.pause();
+      }
+      else {
+        this.player.play();
+      }
     }
   }
 

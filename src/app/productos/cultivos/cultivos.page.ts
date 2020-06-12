@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Howl } from 'howler';
 
 @Component({
@@ -8,10 +8,12 @@ import { Howl } from 'howler';
 })
 export class CultivosPage implements OnInit {
 
+  route: String;
+
   constructor(
-
+    
   ) {
-
+    
   }
 
   sliderConfig = {
@@ -97,12 +99,14 @@ export class CultivosPage implements OnInit {
   }
 
   togglePlayer(pause) {
-    this.isPlaying = !pause;
-    if (pause) {
-      this.player.pause();
-    }
-    else {
-      this.player.play();
+    if(this.player) {
+      this.isPlaying = !pause;
+      if (pause) {
+        this.player.pause();
+      }
+      else {
+        this.player.play();
+      }
     }
   }
 
