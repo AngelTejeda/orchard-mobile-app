@@ -59,6 +59,8 @@ ion-card-title {
   text-align: center;
 }
 
-.swiper-pagination {
-  bottom: 10px !important;    
+ion-slides {
+  --bullet-background: blue;
+  --bullet-background-active: red;
+  --bullet-background-inactive: blue;
 }

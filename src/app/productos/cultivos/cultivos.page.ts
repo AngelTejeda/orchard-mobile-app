@@ -81,6 +81,7 @@ export class CultivosPage implements OnInit {
       },
       onend: () => {
         this.isPlaying = false;
+        this.activeAudio = null;
       }
     })
     this.player.play();
