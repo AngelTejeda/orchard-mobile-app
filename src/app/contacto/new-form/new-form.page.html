@@ -8,41 +8,43 @@
 </ion-header>
 
 <ion-content>
-  <ion-row>
-    <ion-col>
-      <ion-card>
-        <ion-card-content>
-          
-          <ion-form [formGroup]="citaForm" (ngSubmit)="submit()">
-            <ion-list>
-              <ion-item>
-                <ion-label position="floating">Nombre</ion-label>
-                <ion-input formControlName="nombre" type="text"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label position="floating">Telefono</ion-label>
-                <ion-input formControlName="telefono" type="tel"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label position="floating">Huerto</ion-label>
-                <ion-select formControlName="huerto">
-                  <ion-select-option *ngFor="let huerto of huertos">{{ huerto }}</ion-select-option>
-                </ion-select>
-              </ion-item>
-              <ion-item>
-                <ion-label position="floating">Horario</ion-label>
-                <ion-input formControlName="horario" type="text"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label position="floating">Comentarios</ion-label>
-                <ion-input formControlName="comentario" type="text"></ion-input>
-              </ion-item>
-            </ion-list>
-            <ion-button (click)="submit()" type="submit" [disabled]="!citaForm.valid" expand="block">Enviar </ion-button>
-          </ion-form>
+  <ion-card>
+    <ion-card-content>
 
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-  </ion-row>
+      <ion-form [formGroup]="citaForm" (ngSubmit)="submit()">
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input formControlName="nombre" type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Telefono</ion-label>
+            <ion-input formControlName="telefono" type="tel"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Huerto</ion-label>
+            <ion-select formControlName="huerto">
+              <ion-select-option *ngFor="let huerto of huertos">{{ huerto }}</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Horario</ion-label>
+            <ion-input formControlName="horario" type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Comentarios</ion-label>
+            <ion-input formControlName="comentario" type="text"></ion-input>
+          </ion-item>
+        </ion-list>
+        
+        <ion-button (click)="submit()" type="submit" [disabled]="!citaForm.valid" expand="block">Enviar
+        </ion-button>
+      </ion-form>
+
+    </ion-card-content>
+  </ion-card>
 </ion-content>

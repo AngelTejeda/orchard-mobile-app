@@ -24,14 +24,14 @@ export class AppComponent {
     let animation: Animation;
     if (open) {
       animation = this.animationCtrl.create()
-          .addElement(document.querySelector('.arrow'))
-          .duration(100)
-          .fromTo('transform', 'rotate(90deg)', 'rotate(0deg)');
+        .addElement(document.querySelector('.arrow'))
+        .duration(100)
+        .fromTo('transform', 'rotate(90deg)', 'rotate(0deg)');
     } else {
       animation = this.animationCtrl.create()
-          .addElement(document.querySelector('.arrow'))
-          .duration(100)
-          .fromTo('transform', 'rotate(0deg)', 'rotate(90deg)');
+        .addElement(document.querySelector('.arrow'))
+        .duration(100)
+        .fromTo('transform', 'rotate(0deg)', 'rotate(90deg)');
     }
     animation.play()
   }

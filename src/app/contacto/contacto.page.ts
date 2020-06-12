@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {MenuController} from "@ionic/angular";
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,7 +8,11 @@ import { Router } from '@angular/router';
 })
 export class ContactoPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router
+  ) {
+    
+  }
 
   ngOnInit() {
   }
@@ -17,5 +20,4 @@ export class ContactoPage implements OnInit {
   NewForm(){
     this.router.navigate(['/new-form']);
   }
-
 }
