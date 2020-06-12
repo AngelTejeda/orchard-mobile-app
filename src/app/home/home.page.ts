@@ -19,21 +19,23 @@ export class HomePage {
 
     productos = [
         {
-          nombre: "Producto 1",
-          descripcion: "Este es el producto 1.",
-          imagen: "assets/Productos/Cultivos/papa1.jpg",
+          nombre: "Maíz",
+          descripcion: "Directo de la mejor huerta, ofrecemos los mejores maíces para usted y toda su familia." +
+          "Venga y compruébelo usted mismo",
+          imagen: "assets/Productos/Cultivos/maiz1.jpg",
           referencia: "/productos/cultivos"
         },
         {
-          nombre: "Producto 2",
-          descripcion: "Este es el producto 2.",
-          imagen: 'assets/Productos/Cultivos/papa1.jpg',
+          nombre: "Naranja",
+          descripcion: "Dulce naranja de gran tamaño libre de fertilizante lista para consumirla entera o en jugo.",
+          imagen: 'assets/Productos/Frutas/naranja1.jpg',
           referencia: "/productos/frutas"
         },
         {
-            nombre: "Producto 3",
-            descripcion: "Este es el producto 3.",
-            imagen: "assets/Productos/Cultivos/papa1.jpg",
+            nombre: "Sandía",
+            descripcion: "Jugosa sandia de gran tamaño preparada para aportar muchas vitaminas" +
+            "y minerales en sus ricos cocteles.",
+            imagen: "assets/Productos/Frutas/sandia1.jpg",
             referencia: "/productos/frutas"
           }
       ]
