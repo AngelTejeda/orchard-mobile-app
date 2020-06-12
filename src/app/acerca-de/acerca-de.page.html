@@ -11,7 +11,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding class="background">
+<ion-content>
   <ion-header>
     <ion-toolbar>
       <ion-title size="large" style="text-align:center;">
@@ -19,16 +19,9 @@
       </ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <br>
+  
   <div>
-    <ion-text>Visítanos</ion-text>
-  </div>
-  <br>
-
-  <br>
-  <div>
-    <ion-title style="text-align:center;">Seleccione un Huerto<br></ion-title>
+    <ion-title style="text-align:center; margin-top:5px;">Seleccione un Huerto<br></ion-title>
     <ion-segment [(ngModel)]="sembradio">
       <ion-segment-button *ngFor="let huerto of huertos" [value]="huerto" (click)="loadMap()">
         <ion-label>{{ huerto.nombre }}</ion-label>
@@ -37,12 +30,19 @@
   </div>
 
   <div class="ion-margin" id="map"></div>
-  <div class="ion-margin" id="indicaciones" style="background-color:#FFFFFF"></div>
 
   <div class="ion-margin">
-    <ion-button [routerLink]="['/contacto']" style="display:block; margin:auto; margin-top:10px;">
-      <ion-icon name="calendar-outline" slot="start"></ion-icon>
-      Agenda una cita
+   
+    <ion-button *ngIf="!indic && map" (click)="indic = !indic;">
+      Mostrar Indicaciones
+    </ion-button>
+  
+    <ion-button *ngIf="indic && map" (click)="indic = !indic;">
+      Ocultar Indicaciones
     </ion-button>
   </div>
+
+  <div [style.display]="indic == true ? 'block' : 'none'" id="indicators"></div>
+
+  
 </ion-content>

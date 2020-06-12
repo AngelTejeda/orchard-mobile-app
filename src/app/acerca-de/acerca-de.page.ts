@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 //Importamos las dependencias de la geolocalizacion
-import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
-import { LoadingController } from '@ionic/angular';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 //Declaramos la variable google de donde usaremos los métodos principales para el mapa
 declare var google;
@@ -12,17 +11,17 @@ declare var google;
   styleUrls: ['./acerca-de.page.scss'],
 })
 export class AcercaDePage implements OnInit {
-  
   constructor(
     private geolocation: Geolocation,
-    private loadCtrl: LoadingController
   ) {
     
   }
 
   ngOnInit() {
+    this.loadMap();
   }
 
+  indic: Boolean = false;
   huertos = [
     {
       nombre: 'Huerto 1',
@@ -47,21 +46,21 @@ export class AcercaDePage implements OnInit {
   map: any;
   directionsService = new google.maps.DirectionsService();
   directionsDisplay = new google.maps.DirectionsRenderer();
-  destination = { lat: 25.725627, lng: -100.315146 };
-  sembradio: any = null;
+  sembradio: any = this.huertos[0];
 
   //Carga del mapa
   loadMap() {
-    console.log(this.sembradio)
+    this.indic = false;
     const mapEle: HTMLElement = document.getElementById('map'); //Obtenemos el elemento donde se mostrará el mapa.
-    const indicacionesEle : HTMLElement = document.getElementById('indicaciones');
     this.map = new google.maps.Map(mapEle, {
       center: this.sembradio.location,  //Creamos un mapa con centro en el huerto seleccionado.
       zoom: this.sembradio.zoom
     });
 
+    const indicacionesEle : HTMLElement = document.getElementById('indicators');
+    this.directionsDisplay.setPanel(indicacionesEle);  
+    
     this.directionsDisplay.setMap(this.map);
-    this.directionsDisplay.setPanel(indicacionesEle);
   
     //Cuando el mapa esté "listo", calcular la ruta
     google.maps.event.addListenerOnce(this.map, 'idle', () => {
