@@ -51,7 +51,7 @@ export class FrutasPage implements OnInit {
           ruta_imagen: "assets/Productos/Frutas/melon3.jpg",
         }
       ],
-      audio: "assets/Productos/Frutas/melon.mp3"
+      audio: "assets/Productos/Frutas/melon.mp4"
     },
     {
       nombre: "Naranja",
