@@ -12,8 +12,12 @@ declare var google;
   styleUrls: ['./acerca-de.page.scss'],
 })
 export class AcercaDePage implements OnInit {
-  constructor(private geolocation: Geolocation,
-    private loadCtrl: LoadingController) {
+  
+  constructor(
+    private geolocation: Geolocation,
+    private loadCtrl: LoadingController
+  ) {
+    
   }
 
   ngOnInit() {
@@ -55,10 +59,10 @@ export class AcercaDePage implements OnInit {
       center: this.sembradio.location,  //Creamos un mapa con centro en el huerto seleccionado.
       zoom: this.sembradio.zoom
     });
-  
+
     this.directionsDisplay.setMap(this.map);
     //this.directionsDisplay.setPanel(indicacionesEle);
-  
+
     //Cuando el mapa esté "listo", calcular la ruta
     google.maps.event.addListenerOnce(this.map, 'idle', () => {
       mapEle.classList.add('show-map');
@@ -72,7 +76,7 @@ export class AcercaDePage implements OnInit {
       origin: await this.obtenerLocalizacion(), //El origen es la ubicación del dispositivo
       destination: this.sembradio.location, //El destino es el huerto seleccionado
       travelMode: google.maps.TravelMode.DRIVING,
-    }, (response, status)  => {
+    }, (response, status) => {
       if (status === google.maps.DirectionsStatus.OK) {
         this.directionsDisplay.setDirections(response);
       } else {
@@ -82,7 +86,7 @@ export class AcercaDePage implements OnInit {
   }
 
   //Ubicación del Dispositivo
-  private async obtenerLocalizacion(){
+  private async obtenerLocalizacion() {
     const rta = await this.geolocation.getCurrentPosition();
     console.log(rta);
     return {

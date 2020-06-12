@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {MenuController} from "@ionic/angular";
 
 @Component({
   selector: 'app-productos',
@@ -8,7 +7,11 @@ import {MenuController} from "@ionic/angular";
 })
 export class ProductosPage implements OnInit {
 
-  constructor(private menu: MenuController) { }
+  constructor(
+    
+  ) {
+
+  }
 
   sliderConfig = {
     initialSlide: 0,
@@ -53,5 +56,4 @@ export class ProductosPage implements OnInit {
 
   ngOnInit() {
   }
-
 }

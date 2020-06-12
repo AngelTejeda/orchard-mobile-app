@@ -9,7 +9,11 @@ import { Howl } from 'howler';
 })
 export class FrutasPage implements OnInit {
 
-  constructor(private menu: MenuController) { }
+  constructor(
+    private menu: MenuController
+  ) {
+    
+  }
 
   sliderConfig = {
     initialSlide: 0,

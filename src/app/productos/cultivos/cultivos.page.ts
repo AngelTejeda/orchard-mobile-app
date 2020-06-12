@@ -9,7 +9,7 @@ import { Howl } from 'howler';
 export class CultivosPage implements OnInit {
 
   constructor(
-    
+
   ) {
 
   }
@@ -23,8 +23,8 @@ export class CultivosPage implements OnInit {
   cultivos = [
     {
       nombre: "Papa",
-      descripcion: "Papa blanca orgánica. Libre de fertilizantes y regadas con agua totalmente natural. Venga a" + 
-      "probar las mejores papas del estado.",
+      descripcion: "Papa blanca orgánica. Libre de fertilizantes y regadas con agua totalmente natural. Venga a" +
+        "probar las mejores papas del estado.",
       imagenes: [
         {
           ruta_imagen: "assets/Productos/Cultivos/papa1.jpg",
@@ -41,7 +41,7 @@ export class CultivosPage implements OnInit {
     {
       nombre: "Frijol",
       descripcion: " Cultivado en las mejores tierras del país, venga a comprar todos los kilos de frijoles" +
-      "que guste aquí en su huerta.",
+        "que guste aquí en su huerta.",
       imagenes: [
         {
           ruta_imagen: "assets/Productos/Cultivos/frijol1.jpg",
@@ -58,7 +58,7 @@ export class CultivosPage implements OnInit {
     {
       nombre: "Maíz",
       descripcion: "Directo de la mejor huerta, ofrecemos los mejores maíces para usted y toda su familia." +
-      "Venga y compruébelo usted mismo",
+        "Venga y compruébelo usted mismo.",
       imagenes: [
         {
           ruta_imagen: "assets/Productos/Cultivos/maiz1.jpg",
@@ -79,7 +79,7 @@ export class CultivosPage implements OnInit {
   isPlaying = false;
 
   start(audio: String) {
-    if(this.player) {
+    if (this.player) {
       this.player.stop();
     }
     this.player = new Howl({
@@ -98,7 +98,7 @@ export class CultivosPage implements OnInit {
 
   togglePlayer(pause) {
     this.isPlaying = !pause;
-    if(pause) {
+    if (pause) {
       this.player.pause();
     }
     else {
@@ -114,5 +114,4 @@ export class CultivosPage implements OnInit {
 
   ngOnInit() {
   }
-
 }
